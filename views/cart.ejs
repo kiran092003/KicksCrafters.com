@@ -1,0 +1,56 @@
+<%- include('partials/header.ejs') %>
+<div class="shopping">
+  <div class="shop">
+    <div class="heading">
+        <span>Bag</span>
+    </div>
+    <% for (let i= 0; i < item.length; i++) { %>
+        <div>
+            <form action="/de" method="post" class="content">
+            <img src="<%=  item[i].im %>" alt="s" height="150px" width="150px">
+            <div class="name_sec">
+                <span id="n"><%= item[i].nam %></span>
+                <span id="s"><%= item[i].se %></span>
+                <span id="siz">Size:<%= item[i].si%></span>
+                <button type="submit" value="<%= item[i].id %>" name="xc" class="cc"><i class='bx bx-trash'></i></button>
+            </div>
+            <div class="mrp">
+                <span><%= item[i].mr %></span>
+            </div>
+           </form>
+        </div>
+        <% } %>
+  </div>
+  <div class="summary">
+    <div class="he">
+        <span>Summary</span>
+    </div>
+    <div class="sub">
+        <span>Subtotal</span>
+        <span class="mo" >$<%= tot %></span>
+    </div>
+  <div class="esti">
+    <span>Estimated Delivery & Handling</span>
+    <span class="m">$5</span>
+  </div>
+   <div class="tot">
+    <span>Total</span>
+    <span class="moy">$<%= et %></span>
+   </div>
+   <div class="buy">
+    <button type="submit">Checkout</button>
+   </div>
+  </div>
+</div>
+<script>
+  var count=0;
+  document.getElementById("menu").addEventListener("click",function(){        
+           document.getElementById("snf").style.display="flex";  
+  })
+  document.getElementById("ci").addEventListener("click",function(){
+      document.getElementById("snf").style.display="none";
+  })
+</script>
+
+
+<%- include('partials/footer.ejs') %>

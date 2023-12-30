@@ -1,0 +1,98 @@
+<%- include('partials/header.ejs') %>
+
+<div class="card-container">
+    <div class="card1">
+        <img src="<%= image %>" alt="sne1">
+    </div>
+    <div class="card2">
+        <div class="one">
+            <span id="name"><%= name %></span>
+            <span id="other"><%= sec %></span>
+        </div>
+        <div class="two">
+            <span id="mrp"><%= mrp %></span>
+            <span class="o">incl. of taxes</span>
+            <span class="oh">(Also includes all applicable duties)</span>
+        </div>
+        <div class="lab">
+            <span>Select Size</span>
+        </div>
+        <div class="size">
+            <div>
+                <form action="/size" method="post">
+                <button  class="s1" type="submit" value="UK 6" name="si" id="6">UK 6</button>
+                </form>
+            </div>
+            <div>
+                <form action="/size" method="post">
+                <button class="s1" type="submit" value="UK 7" name="si" id="7">UK 7</button>
+            </form>
+            </div>
+            <div>
+                <form action="/size" method="post">
+                <button class="s1" type="submit" value="UK 8" name="si" id="8">UK 8</button>
+            </form>
+            </div>
+            <div>
+                <form action="/size" method="post">
+                <button class="s1" type="submit" value="UK 9" name="si" id="9">UK 9</button>
+            </form>
+            </div>
+            <div>
+                <form action="/size" method="post">
+                <button class="s2" type="submit" value="UK 10" name="si" id="10">UK 10</button>
+            </form>
+            </div>
+            <div>
+                <form action="/size" method="post">
+                <button class="s2" type="submit" value="UK 11" name="si" id="11">UK 11</button>
+            </form>
+            </div>
+        </div>
+        <div class="add">
+            <form action="/add_cart" method="post">
+                <button type="submit">Add to Bag</button>
+            </form> 
+            <span class="warning"><%= bv %></span>
+        </div>
+    </div>
+</div>
+<script>
+    
+    document.getElementById("6").addEventListener("click",function(){
+    document.getElementById("6").style.border="1px solid black";
+  
+})
+document.getElementById("7").addEventListener("click",function(){
+    document.getElementById("7").style.border="1px solid black";
+
+})
+document.getElementById("8").addEventListener("click",function(){
+    document.getElementById("8").style.border="1px solid black";
+   
+})
+document.getElementById("9").addEventListener("click",function(){
+    document.getElementById("9").style.border="1px solid black";
+
+})
+document.getElementById("10").addEventListener("click",function(){
+    document.getElementById("10").style.border="1px solid black";
+   
+})
+document.getElementById("11").addEventListener("click",function(){
+    document.getElementById("11").style.border="1px solid black";
+  
+})
+
+        var count=0;
+        document.getElementById("menu").addEventListener("click",function(){        
+                 document.getElementById("snf").style.display="flex";  
+        })
+        document.getElementById("ci").addEventListener("click",function(){
+            document.getElementById("snf").style.display="none";
+        })
+    
+
+</script>
+
+<%- include('partials/footer.ejs') %>
